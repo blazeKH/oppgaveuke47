@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="byttBildeKnapp">Bytt Bilde</button>
+    <img id="bilde1" src="bilde1.webp" alt="Bilde 1" width="40%">
+    <img id="bilde2" src="bilde2.jpg" alt="Bilde 2" width="40%" style="display: none;">
+
+    <script>
+        // Hent referanser til bildelementene og knappen
+        var bilde1 = document.getElementById('bilde1');
+        var bilde2 = document.getElementById('bilde2');
+        var byttBildeKnapp = document.getElementById('byttBildeKnapp');
+
+        // Legg til en variabel for å holde styr på hvilket bilde som vises
+        var visBilde1 = true;
+
+        // Legg til en hendelseslytter for knappen
+        byttBildeKnapp.addEventListener('click', function() {
+            // Sjekk hvilket bilde som er synlig og bytt til det motsatte
+            if (visBilde1) {
+                bilde1.style.display = 'none';
+                bilde2.style.display = 'block';
+            } else {
+                bilde1.style.display = 'block';
+                bilde2.style.display = 'none';
+            }
+            // Oppdater variabelen for hvilket bilde som vises
+            visBilde1 = !visBilde1;
+        });
+    </script>
+</body>
+</html>

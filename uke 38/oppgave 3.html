@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endre tekst ved knappklikk</title>
+</head>
+<body>
+    <button id="klikkKnapp">Klikk meg!</button>
+    <p id="tekstP">Teksten blir endret her.</p>
+
+    <script>
+        // Finn knappen og <p>-taggen ved hjelp av ID
+        var knapp = document.getElementById("klikkKnapp");
+        var tekstP = document.getElementById("tekstP");
+
+        // Legg til en event listener for klikk-arrangementet
+        knapp.addEventListener("click", function () {
+            // Endre teksten i <p>-taggen
+            tekstP.textContent = "Knappen ble klikket!";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="randomText"> initiel tekst </p>
+    <button id="generateText"> generer quote </button>
+
+    <script>
+        {
+            const randomTextParagraph = document.getElementById('randomText');
+            const generateTextButton = document.getElementById('generateText');
+
+            generateTextButton.addEventListener('click', () => {
+                fetch('https://api.quotable.io/random')
+                .then(Response => Response.json())
+                .then(data => {
+                    randomTextParagraph.textContent = data.content;
+                })
+                .catch(error => {
+                    console.error('feil ved henting av tekst', error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

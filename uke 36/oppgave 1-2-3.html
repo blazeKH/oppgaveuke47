@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kombinert Oppgaveløsning</title>
+    <style>
+        /* Stil for den firkantede div-en */
+        #firkantigDiv {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Oppgave 1: Firkantig div med knapp -->
+    <div id="firkantigDiv"></div>
+    <button id="endreFargeKnapp">Endre Farge</button>
+
+    <!-- Oppgave 2: Teller med knapper -->
+    <div id="tellerDiv">
+        <p>Teller: <span id="teller">0</span></p>
+        <button id="okTeller">Øk</button>
+        <button id="reduserTeller">Reduser</button>
+    </div>
+
+    <!-- Oppgave 3: Endre tekst uten bruk av API -->
+    <p id="tekstTagg">Dette er initiell tekst.</p>
+    <button id="endreTekstKnapp">Endre Tekst</button>
+
+    <script>
+        // Oppgave 1: Firkantig div med knapp
+        var firkantigDiv = document.getElementById("firkantigDiv");
+        var endreFargeKnapp = document.getElementById("endreFargeKnapp");
+
+        function tilfeldigFarge() {
+            var letters = "0123456789ABCDEF";
+            var farge = "#";
+            for (var i = 0; i < 6; i++) {
+                farge += letters[Math.floor(Math.random() * 16)];
+            }
+            return farge;
+        }
+
+        endreFargeKnapp.addEventListener("click", function () {
+            var nyFarge = tilfeldigFarge();
+            firkantigDiv.style.backgroundColor = nyFarge;
+        });
+
+        // Oppgave 2: Teller med knapper
+        var tellerDiv = document.getElementById("tellerDiv");
+        var tellerElement = document.getElementById("teller");
+        var okTellerKnapp = document.getElementById("okTeller");
+        var reduserTellerKnapp = document.getElementById("reduserTeller");
+
+        var teller = 0;
+
+        function oppdaterTeller() {
+            tellerElement.textContent = teller;
+        }
+
+        okTellerKnapp.addEventListener("click", function () {
+            teller++;
+            oppdaterTeller();
+        });
+
+        reduserTellerKnapp.addEventListener("click", function () {
+            if (teller > 0) {
+                teller--;
+                oppdaterTeller();
+            }
+        });
+
+        // Oppgave 3: Endre tekst uten bruk av API
+        var tekstTagg = document.getElementById("tekstTagg");
+        var endreTekstKnapp = document.getElementById("endreTekstKnapp");
+
+        var tilfeldigeTekster = [
+            "Dette er en tilfeldig tekst 1.",
+            "Dette er en tilfeldig tekst 2.",
+            "Dette er en tilfeldig tekst 3.",
+            "Dette er en annen tilfeldig tekst."
+        ];
+
+        endreTekstKnapp.addEventListener("click", function () {
+            // Deaktiver knappen mens teksten endres
+            endreTekstKnapp.disabled = true;
+
+            // Velg en tilfeldig tekst fra listen
+            var tilfeldigTekst = tilfeldigeTekster[Math.floor(Math.random() * tilfeldigeTekster.length)];
+
+            // Oppdater teksten i <p>-taggen
+            tekstTagg.textContent = tilfeldigTekst;
+
+            // Aktiver knappen igjen etter oppdatering
+            endreTekstKnapp.disabled = false;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="inn">navn</label> 
+    <input type="text" id="inn">
+    <button id="knapp">vis melding</button>
+    <div id="melding">
+        utskrift
+    </div>
+    <div id="navn">
+    utskrift
+    </div>
+    <script type="application/javascript">
+        $(function(){
+            $("#knapp").click(function(){
+                $("#melding").html("<h2>hallo</h2>");
+            });
+            $("#inn").change(function(){
+                let navnet = $("#inn").val();
+                $("navn").text(navnet);
+            })
+        })
+        
+
+    </script> 
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="randomText"> initiel tekst </p>
+    <button id="generateText"> trykk for fakta </button>
+
+    <script>
+        {
+            const randomTextParagraph = document.getElementById('randomText');
+            const generateTextButton = document.getElementById('generateText');
+
+            generateTextButton.addEventListener('click', () => {
+                fetch('https://uselessfacts.jsph.pl/api/v2/facts/random?language=en')
+                .then(Response => Response.json())
+                .then(data =>{
+                    randomTextParagraph.textContent = data.text;
+                    console.log(data.text);
+                })
+                .catch(error => {
+                    console.error('feil ved henter av tekst', error);
+                })
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var navn = "Line Jensen";
+        var alder = 23;
+        var myndig = true;
+        var hoyde = 180;
+
+        var beskrivelse = navn + " er " + alder + " år gamel og er ";
+
+        if (myndig) {
+            beskrivelse += "myndig og har ";
+        } else {
+            beskrivelse += "ikke myndig og har ";
+        }
+        beskrivelse += "en høyde på " + hoyde + ".";
+
+        alert(beskrivelse);
+
+        document.write("<p>"+beskrivelse+"</p>")
+
+        console.log(beskrivelse);
+    </script>
+</body>
+</html>

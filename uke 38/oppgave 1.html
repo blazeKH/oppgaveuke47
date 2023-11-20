@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var radiusInput = prompt("Skriv inn radiusen til sirkelen:");
+
+
+var radius = parseFloat(radiusInput);
+
+
+if (isNaN(radius)) {
+  console.log("Du har skrevet inn en ugyldig radius.");
+} else {
+
+  var area = Math.PI * Math.pow(radius, 2);
+
+
+  console.log("Arealet av sirkelen med radius " + radius + " er " + area);
+}
+    </script>
+</body>
+</html>

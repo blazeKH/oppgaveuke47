@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Tilfeldig Heltall Generator</h1>
+    <p>Klikk på knappen for å generere et tilfeldig heltall mellom 1 og 100:</p>
+    <button id="generateButton">Generer</button>
+    <p id="randomNumber"></p>
+
+    <script>
+        // Funksjonen som genererer et tilfeldig heltall og viser det på nettsiden
+        function generateRandomNumber() {
+            // Generer et tilfeldig heltall mellom 1 og 100
+            var randomNumber = Math.floor(Math.random() * 100) + 1;
+
+            // Finn HTML-elementet der vi vil vise tallet
+            var randomNumberElement = document.getElementById("randomNumber");
+
+            // Vis det tilfeldige heltallet på nettsiden
+            randomNumberElement.textContent = "Det tilfeldige heltallet er: " + randomNumber;
+        }
+
+        // Legg til en hendelseslytter for knappen
+        var generateButton = document.getElementById("generateButton");
+        generateButton.addEventListener("click", generateRandomNumber);
+    </script>
+</body>
+</html>

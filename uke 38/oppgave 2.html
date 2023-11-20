@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+var celsiusInput = prompt("Skriv inn temperaturen i Celsius:");
+
+
+var celsius = parseFloat(celsiusInput);
+
+
+if (isNaN(celsius)) {
+  console.log("Du har skrevet inn en ugyldig temperatur i Celsius.");
+} else {
+
+  var fahrenheit = (celsius * 9/5) + 32;
+
+  console.log(celsius + " grader Celsius tilsvarer " + fahrenheit + " grader Fahrenheit.");
+}
+</script>
+</body>
+</html>

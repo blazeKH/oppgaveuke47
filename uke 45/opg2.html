@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <tr><td>veld type:</td></tr>
+        <!--baguett-->
+        <tr><td>baguett</td>
+            <td><input type ="radio" name ="frokost" value="baguett"></td></tr>
+        <!--smørbrød-->
+        <tr><td>smørbrød</td>
+            <td><input type ="radio" name ="frokost" value="smørbrød"></td></tr>
+
+        <tr><td>veld pålegg:</td></tr>
+
+         <!--rekker-->
+         <tr><td>rekker</td>
+            <td><input type ="checkbox" name ="frokost" value="rekker"></td></tr>
+
+         <!--egg-->
+         <tr><td>majones</td>
+            <td><input type ="checkbox" name ="frokost" value="egg"></td></tr>
+
+         <!--majones-->
+         <tr><td>egg</td>
+            <td><input type ="checkbox" name ="frokost" value="majones"></td></tr>
+
+        <tr><td>veld betalings form:</td></tr>
+        <tr><td><select id="bettaling">
+        <option>kontant</option>
+        <option>vipps</option>
+        <option>visa</option>
+        <option>mastercard</option>
+        </select></td></tr>
+
+    </table>
+
+    <button onclick="velg()">bekreft</button>
+
+    <script type="application/javascript">
+        function velg(){
+            let ut = "frokost" : " + "
+        }
+
+    </script> 
+
+</body>
+</html>
